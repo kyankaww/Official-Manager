@@ -72,7 +72,7 @@ const members = [
     name: "Nabila Putri Nurdisyla",
     nickname: "Naput",
     role: "Tournament Affairs",
-    photo: "",
+    photo: "naput.jpeg",
     bio: "Bersama tim turnamen, mengurus administrasi pemain, mencari informasi kompetisi, serta menjembatani komunikasi antara UKM dan pihak penyelenggara."
   },
   {
@@ -80,7 +80,7 @@ const members = [
     name: "Agung Setiawan",
     nickname: "Agung",
     role: "Support Crew",
-    photo: "",
+    photo: "agung.jpeg",
     bio: "Mendukung kebutuhan operasional dan membantu kelancaran berbagai kegiatan divisi sesuai kebutuhan tim."
   }
 ];
@@ -309,7 +309,7 @@ function renderMembers() {
   benchGrid.replaceChildren();
 
   // Tujuh anggota pertama tampil di lapangan.
-  const lineupMembers = members.slice(0, 7);
+  const lineupMembers = members.slice(0, 9);
 
   // Anggota berikutnya tampil di bagian bench.
   const benchMembers = members.slice(7);

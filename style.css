@@ -709,11 +709,9 @@ h3 span {
   margin-top: 24px;
 }
 
-/* Layout desktop: kepala divisi di atas, anggota di bawah */
-
 /* =========================
    LINEUP — DESKTOP & MOBILE
-   Susunan: 1-1-2-1-2
+   Susunan: 1-1-2-1-2-2
 ========================= */
 
 .lineup-grid {
@@ -773,7 +771,18 @@ h3 span {
   grid-row: 5;
 }
 
-/* Highlight anggota pertama */
+/* Baris 6: 2 anggota */
+.lineup-grid > .member-card:nth-child(8) {
+  grid-column: 1 / span 2;
+  grid-row: 6;
+}
+
+.lineup-grid > .member-card:nth-child(9) {
+  grid-column: 3 / span 2;
+  grid-row: 6;
+}
+
+/* Highlight kepala divisi */
 .lineup-grid > .member-card:nth-child(1) .member-photo-wrap {
   border: 2px solid var(--accent);
   box-shadow: 0 0 22px rgba(230, 90, 55, 0.2);
@@ -817,7 +826,6 @@ h3 span {
     max-width: 125px;
   }
 }
-
 /* =========================
    MEMBER CARDS
 ========================= */
