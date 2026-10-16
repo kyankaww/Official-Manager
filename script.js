@@ -90,7 +90,6 @@ const members = [
 // =========================================
 
 const lineupGrid = document.querySelector("#lineupGrid");
-const benchGrid = document.querySelector("#benchGrid");
 
 const nav = document.querySelector("#mainNav");
 const menuToggle = document.querySelector("#menuToggle");
@@ -299,44 +298,25 @@ function makeBenchCard(member) {
 // RENDER ANGGOTA
 // =========================================
 
+
 function renderMembers() {
-  if (!lineupGrid || !benchGrid) {
-    console.warn("Elemen lineupGrid atau benchGrid tidak ditemukan.");
+  if (!lineupGrid) {
+    console.warn("Elemen lineupGrid tidak ditemukan.");
     return;
   }
 
   lineupGrid.replaceChildren();
-  benchGrid.replaceChildren();
 
-  // Tujuh anggota pertama tampil di lapangan.
-  const lineupMembers = members.slice(0, 9);
-
-  // Anggota berikutnya tampil di bagian bench.
-  const benchMembers = members.slice(7);
-
+  // Semua anggota tampil di lapangan.
   const lineupFragment = document.createDocumentFragment();
-  const benchFragment = document.createDocumentFragment();
 
-  lineupMembers.forEach(member => {
+  members.forEach(member => {
     lineupFragment.appendChild(makeMemberCard(member));
   });
 
-  benchMembers.forEach(member => {
-    benchFragment.appendChild(makeBenchCard(member));
-  });
-
   lineupGrid.appendChild(lineupFragment);
-  benchGrid.appendChild(benchFragment);
-
-  // Sembunyikan bench jika tidak ada anggota.
-  const benchHeading = document.querySelector(".bench-heading");
-
-  if (benchHeading) {
-    benchHeading.hidden = benchMembers.length === 0;
-  }
-
-  benchGrid.hidden = benchMembers.length === 0;
 }
+
 
 // =========================================
 // MENU MOBILE
